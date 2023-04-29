@@ -245,6 +245,7 @@ body {
   }
   .main-content .container .left-side {
     width: 100% !important;
+    margin-bottom: 1.5rem;
   }
   .main-content .container .right-side {
     grid-template-columns: 1fr !important;
