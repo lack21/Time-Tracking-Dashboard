@@ -1,6 +1,6 @@
 # Time-Tracking-Dashboard
 
-Tools Used : 
+Tools Used :   
   • HTML  
   • SASS  
   • JavaScript  
