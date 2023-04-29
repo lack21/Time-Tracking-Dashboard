@@ -1,0 +1,324 @@
+// lear
+// Time Tracking Dashboard
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+// Colors
+$blue: hsl(246, 80%, 60%);
+$lightOrange: hsl(15, 100%, 70%);
+$softBlue: hsl(195, 74%, 62%);
+$lightRed: hsl(348, 100%, 68%);
+$limeGreen: hsl(145, 58%, 55%);
+$violet: hsl(264, 64%, 52%);
+$softOrange: hsl(43, 84%, 65%);
+$veryDarkBlue: hsl(226, 43%, 10%);
+$darkBlue: hsl(235, 46%, 20%);
+$desaturatedBlue: hsl(235, 45%, 61%);
+$paleBlue: hsl(236, 100%, 87%);
+$white: hsl(0, 0, 100%);
+
+body {
+  background-color: $veryDarkBlue;
+}
+
+// Main Content
+.main-content {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+
+  .container {
+    display: flex;
+    align-items: center;
+    height: 520px;
+    gap: 2rem;
+
+    .left-side {
+      display: flex;
+      flex-direction: column;
+      width: 275px;
+      height: 100%;
+
+      .profile {
+        background-color: $blue;
+        padding: 1.75rem;
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+
+        img {
+          width: 80px;
+          display: block;
+          margin-bottom: 3.25rem;
+          border: 3px solid $white;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+        }
+
+        .text {
+          color: $paleBlue;
+          padding-bottom: 0.25rem;
+        }
+
+        .title {
+          color: $white;
+          font-weight: 300;
+          font-size: 2.5rem;
+          padding-bottom: 3.25rem;
+        }
+      }
+
+      .buttons {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.25rem;
+        padding: 1.75rem;
+        background-color: $darkBlue;
+        border-radius: 0 0 1rem 1rem;
+        -webkit-border-radius: 0 0 1rem 1rem;
+        -moz-border-radius: 0 0 1rem 1rem;
+        -ms-border-radius: 0 0 1rem 1rem;
+        -o-border-radius: 0 0 1rem 1rem;
+
+        &::after {
+          position: absolute;
+          left: 0;
+          bottom: 100%;
+          content: "";
+          height: 1rem;
+          width: 100%;
+          background-color: $darkBlue;
+          z-index: -1;
+        }
+
+        .btn {
+          font-weight: 400;
+          color: $desaturatedBlue;
+          cursor: pointer;
+          transition: 0.3s;
+          -webkit-transition: 0.3s;
+          -moz-transition: 0.3s;
+          -ms-transition: 0.3s;
+          -o-transition: 0.3s;
+
+          &.active {
+            color: $white;
+          }
+
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .right-side {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      height: 100%;
+
+      .box {
+        width: 275px;
+
+        &:nth-child(1) .top-box {
+          background-color: $lightOrange;
+
+          &::after {
+            background-color: $lightOrange;
+          }
+
+          &::before {
+            background-image: url(images/icon-work.svg);
+          }
+        }
+
+        &:nth-child(2) .top-box {
+          background-color: $softBlue;
+
+          &::after {
+            background-color: $softBlue;
+          }
+
+          &::before {
+            background-image: url(images/icon-play.svg);
+          }
+        }
+
+        &:nth-child(3) .top-box {
+          background-color: $lightRed;
+
+          &::after {
+            background-color: $lightRed;
+          }
+
+          &::before {
+            background-image: url(images/icon-study.svg);
+          }
+        }
+
+        &:nth-child(4) .top-box {
+          background-color: $limeGreen;
+
+          &::after {
+            background-color: $limeGreen;
+          }
+
+          &::before {
+            background-image: url(images/icon-exercise.svg);
+          }
+        }
+
+        &:nth-child(5) .top-box {
+          background-color: $violet;
+
+          &::after {
+            background-color: $violet;
+          }
+
+          &::before {
+            background-image: url(images/icon-social.svg);
+          }
+        }
+
+        &:nth-child(6) .top-box {
+          background-color: $softOrange;
+
+          &::after {
+            background-color: $softOrange;
+          }
+
+          &::before {
+            background-image: url(images/icon-self-care.svg);
+          }
+        }
+
+        .top-box {
+          position: relative;
+          height: 20%;
+          border-radius: 1rem 1rem 0 0;
+          -webkit-border-radius: 1rem 1rem 0 0;
+          -moz-border-radius: 1rem 1rem 0 0;
+          -ms-border-radius: 1rem 1rem 0 0;
+          -o-border-radius: 1rem 1rem 0 0;
+          background-color: red;
+
+          &::after {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            height: 1rem;
+            width: 100%;
+            content: "";
+            z-index: -1;
+          }
+
+          &::before {
+            position: absolute;
+            top: 0;
+            left: 60%;
+            content: "";
+            width: 40%;
+            height: 100%;
+            background-repeat: no-repeat;
+          }
+        }
+
+        .bottom-box {
+          height: 80%;
+          cursor: pointer;
+          transition: 0.3s;
+          -webkit-transition: 0.3s;
+          -moz-transition: 0.3s;
+          -ms-transition: 0.3s;
+          -o-transition: 0.3s;
+          padding: 1.75rem;
+          border-radius: 1rem;
+          -webkit-border-radius: 1rem;
+          -moz-border-radius: 1rem;
+          -ms-border-radius: 1rem;
+          -o-border-radius: 1rem;
+          background-color: $darkBlue;
+
+          &:hover {
+            background-color: $desaturatedBlue;
+          }
+
+          .top-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .name {
+              font-weight: 500;
+              color: $white;
+            }
+          }
+
+          .heading {
+            font-size: 3.5rem;
+            color: $white;
+            font-weight: 300;
+            padding: 1.5rem 0 0.5rem;
+          }
+
+          .text {
+            color: $paleBlue;
+            font-weight: 400;
+            font-size: 0.925rem;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+}
+
+// For Smaller Devices
+@media screen and (max-width: 1232px) {
+  .main-content .container {
+    .right-side {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5rem 2rem !important;
+
+      .box .bottom-box {
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 932px) {
+  .main-content .container {
+    flex-direction: column;
+    width: 90vw;
+
+    .left-side {
+      width: 100% !important;
+    }
+
+    .right-side {
+      grid-template-columns: 1fr !important;
+      width: 90vw;
+      height: auto;
+      padding-bottom: 5rem;
+
+      .box {
+        width: 100%;
+      }
+    }
+  }
+}
